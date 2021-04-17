@@ -1,0 +1,66 @@
+﻿@model IEnumerable<Bookstore.Entities.Author>
+
+<div class="container-fluid">
+
+    <h1 class="text-center text-capitalize"> All Authors</h1>
+
+    <hr />
+
+    @*<div class="row">
+        <div class="col-md-6 p-3 mx-auto">
+            <a class="btn btn-success btn-block" asp-action="Create">
+                <i class="fas fa-plus-circle"></i>&nbsp;&nbsp; Create
+            </a>
+        </div>
+    </div>
+
+    <h3 class="text-center text-capitalize">Author</h3>*@
+
+    <div class="table-responsive-sm">
+        <table class="table table-bordered">
+            <thead class="thead-dark">
+                <tr>
+                    <th> Id </th>
+                    <th> Name </th>
+                    <th> Country </th>
+                    <th> DateBirth </th>
+                    <th style="width: 30%; word-wrap: break-word;"> ShortDescription </th>
+                    <th> Language </th>
+                    <th> Gender </th>
+                    <th> Popularity </th>
+                    <th colspan="2">
+                        <a asp-action="Create" class="btn btn-block btn-success">
+                            <i class="fas fa-user"></i> &nbsp; Create Author
+                        </a>
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var author in Model)
+                {
+    <tr class="table-rows">
+        <td> @Html.DisplayFor(modelItem => author.Id) </td>
+        <td> @Html.DisplayFor(modelItem => author.Name) </td>
+        <td> @Html.DisplayFor(modelItem => author.Country) </td>
+        <td> @Html.DisplayFor(modelItem => author.DateBirth) </td>
+        <td> @Html.DisplayFor(modelItem => author.ShortDescription) </td>
+        <td> @Html.DisplayFor(modelItem => author.Language) </td>
+        <td> @Html.DisplayFor(modelItem => author.Gender) </td>
+        <td> @Html.DisplayFor(modelItem => author.Popularity) </td>
+        <td>
+            <a asp-action="Edit" asp-route-id="@author.Id" class="btn btn-block btn-secondary">
+                <i class="fas fa-edit"></i> &nbsp; &nbsp; Edit
+            </a>
+            <a asp-action="Details" asp-route-id="@author.Id" class="btn btn-block btn-info">
+                <i class="fas fa-info-circle"></i> &nbsp; &nbsp; Details
+            </a>
+            <a asp-action="Delete" asp-route-id="@author.Id" class="btn btn-block btn-danger">
+                <i class="fas fa-trash-o"></i> &nbsp; &nbsp; Delete
+            </a>
+        </td>
+    </tr>}
+            </tbody>
+        </table>
+    </div>
+
+</div>

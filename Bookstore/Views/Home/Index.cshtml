@@ -1,0 +1,72 @@
+﻿@model Bookstore.Models.HomeViewModel
+@{
+    ViewData["Title"] = "Bookstore";
+}
+
+<!-- Search Section -->
+<div class="container-fluid search-bg">
+    <div class="text-center">
+        <h1 class="display-4">Welcome DJ_Engiz</h1>
+    </div>
+
+    <div class="col-md-6 mx-auto p-5">
+        <form asp-action="Search" method="post">
+            <div class="input-group">
+                <input type="text" class="form-control bg-light" placeholder="Search" name="Search" id="searchbook" value="" />
+                <button class="btn btn-success" id="searchBtn">
+                    Search
+                    <i class="fa fa-search"></i>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>
+
+<!-- Banner Section -->
+<div class="container-fluid bookstore-background">
+    <div class="row">
+        <div class="col-12">
+            <h1 class="display-4 banner-text-style1">Welcome to our online bookstore</h1>
+            <h4 class="display-4 banner-text-style2">Find Your Next Adventure</h4>
+            <div class="col-md-6 quotes-section">
+                <blockquote class="quote-text-quote" id="quote"></blockquote>
+                <p class="quote-text-author" id="quote_author"></p>
+                @*<p class="quote-text-tags" id="quote_tags"></p>*@
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- All Books Section-->
+<div class="container-fluid">
+    <h2>All Books</h2>
+    <h6><em>List of all books</em></h6>
+    <div class="row pb-5 cards-div-background  pl-2 pr-2">
+        @foreach (var book in Model.AllBooksList)
+        {
+        <div class="col-12 col-md-3 mt-5">
+            <!-- <div class="card h-100" style="background-image: url(/photos/@book.PhotoURL); background-repeat: no-repeat; background-size: 100% 100%;">-->
+            <div class="card h-100">
+                <img src="~/photos/@book.PhotoURL" class="img-fluid" style="max-width: 350px;" />
+                <div class="card-body">
+                    <h5 class="card-title"> @Html.DisplayFor(modelItem => book.Title) </h5>
+                    <h6 class=""><em>by</em> &nbsp; @Html.DisplayFor(modelItem => book.AuthorName) </h6>
+                    <hr />
+                    <p class="card-text">Category: @Html.DisplayFor(modelItem => book.CategoryName)</p>
+                    <p class="card-text">Book Type: @Html.DisplayFor(modelItem => book.BookType)</p>
+                    <button class="btn btn-secondary btn-block btn-wishlist">
+                    <i class="fas fa-plus-circle"></i>&nbsp;&nbsp; Add to Wishlist
+                    </button>
+                    <button class="btn btn-success btn-block"> 
+                    <i class="fas fa-cart-plus"></i>&nbsp;&nbsp; Add to Card
+                    </button>
+                </div>
+            </div>
+        </div>
+        }
+    </div>
+</div>
+
+@section Scripts {
+    <script src="~/js/home/home.js"></script>
+} 

@@ -1,0 +1,214 @@
+﻿/* ************ Basic ************ */
+a.navbar-brand {
+    white-space: normal;
+    text-align: center;
+    word-break: break-all;
+}
+
+.navbar-margins {
+    margin-right: 0.95rem !important;
+    margin-left: 0.95rem !important;
+    padding-bottom: 1rem !important;
+}
+
+.text-block {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    background-color: black;
+    color: white;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+.cards-div-background {
+    background-color: #252952e6;
+}
+
+.nav-link:hover {
+    border-bottom:  1px solid;
+    border-bottom-color:aqua;
+    -webkit-transition: 0.5s ease-out;
+}
+@media only screen and (max-width: 600px){
+
+    .nav-link:hover {
+        border-bottom: 1px solid;
+        border-bottom-color: aqua;
+        max-width: 13%;
+        text-decoration-color: aquamarine;
+       
+    }
+}
+.search-bg {
+    background-color: #5698d2;
+}
+
+
+a {
+    color: #0366d6;
+}
+
+.error {
+    color: crimson;
+    text-align: center;
+    width: 100%;
+    border-color: crimson;
+}
+
+.btn-primary {
+    color: #fff;
+    background-color: #1b6ec2;
+    border-color: #1861ac;
+}
+.btn-wishlist {
+    background-color: yellow;
+}
+
+.nav-pills .nav-link.active, .nav-pills .show > .nav-link {
+    color: #fff;
+    background-color: #1b6ec2;
+    border-color: #1861ac;
+}
+
+html {
+    font-size: 14px;
+}
+@media (min-width: 768px) {
+    html {
+        font-size: 16px;
+    }
+}
+
+.border-top {
+    border-top: 1px solid #e5e5e5;
+}
+
+.border-bottom {
+    border-bottom: 1px solid #e5e5e5;
+}
+
+.box-shadow {
+    box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05);
+}
+
+button.accept-policy {
+    font-size: 1rem;
+    line-height: inherit;
+}
+
+.btn-custom-upload {
+    border: 1px solid #469b88;
+    background: #dcf0eb;
+}
+
+/* ************ Sticky footer styles ************ */
+html {
+    position: relative;
+    min-height: 100%;
+}
+
+body {
+    /* Margin bottom by footer height */
+    margin-bottom: 60px;
+}
+
+.bookstore-background {
+    background-image: url("../img/Books_shutterstock_hero.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding-bottom: 20%;
+    padding-top: 5%;
+    position: relative !important;
+}
+
+.banner-text-style1 {
+    color: white;
+    text-transform: uppercase;
+    font-size: 35px;
+    padding-left: 5%;
+}
+
+.banner-text-style2 {
+    color: white;
+    text-transform: lowercase;
+    font-size: 35px;
+    padding-left: 5%;
+    margin-top: 1%;
+    font-family: Papyrus;
+}
+
+.quote-text-quote {
+    color: white;
+    padding-left: 5%;
+    font-size: 22px;
+    font-style: italic;
+    font-weight: lighter;
+    margin-top: 1%;
+    text-align: justify;
+}
+
+
+.quote-text-author {
+    color: white;
+    padding-left: 5%;
+    font-size: 19px;
+    font-family: Papyrus;
+    margin-top: 1%;
+}
+
+.quote-text-tags {
+    color: #878787;
+    padding-left: 5%;
+    font-size: 14px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    margin-top: 1%;
+}
+.table-rows:nth-child(2n+1) {
+    background-color: #ead1d1;
+}
+
+/* ================= card style ================= */
+.card-text {
+    text-overflow: ellipsis !important;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.card-title {
+    text-overflow: ellipsis !important;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.home-card-style {
+    transition: ease-in-out 0.3s;
+    cursor: pointer;
+    -webkit-box-shadow: 10px 4px 29px -1px rgba(0,0,0,0.43);
+    -moz-box-shadow: 10px 4px 29px -1px rgba(0,0,0,0.43);
+    box-shadow: 10px 4px 29px -1px rgba(0,0,0,0.43);
+}
+
+    .home-card-style:hover {
+        transform: scale(1.1);
+        transition: ease-in-out 0.3s;
+    }
+/* ================= card style - end ================= */
+
+/* ************ Book ************ */
+.btn-add-new-custom {
+    float: right !important;
+}
+
+a:not([href]):not([tabindex]).btn-add-new-custom {
+    color: white !important;
+}
+
+/* ************ Footer ************ */
+.footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    white-space: nowrap;
+    line-height: 60px; /* Vertically center the text there */
+}
+
