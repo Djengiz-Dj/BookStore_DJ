@@ -10,6 +10,14 @@ a.navbar-brand {
     margin-left: 0.95rem !important;
     padding-bottom: 1rem !important;
 }
+@media (max-width:600px) {
+    .navbar-margins {
+        margin-right: 1.1rem !important;
+        margin-left: 1.1rem !important;
+        padding-bottom: 1rem !important;
+    }
+}
+
 
 .text-block {
     position: absolute;
@@ -23,11 +31,18 @@ a.navbar-brand {
 .cards-div-background {
     background-color: #252952e6;
 }
+.nav-link{
+    border-bottom: 1px solid !important;
+}
+.nav-link {
+    border-bottom: 1px solid !important;
+    border-bottom-color: transparent !important;
+}
 
 .nav-link:hover {
-    border-bottom:  1px solid;
-    border-bottom-color:aqua;
-    -webkit-transition: 0.5s ease-out;
+        border-bottom: 1px solid !important;
+        border-bottom-color: #5698d2 !important;
+        -webkit-transition: 0.10s ease-in-out !important;
 }
 @media only screen and (max-width: 600px){
 
@@ -61,7 +76,7 @@ a {
     border-color: #1861ac;
 }
 .btn-wishlist {
-    background-color: yellow;
+    background-color: #5698d2;
 }
 
 .nav-pills .nav-link.active, .nav-pills .show > .nav-link {

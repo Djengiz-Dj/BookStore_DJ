@@ -5,7 +5,7 @@
     using System.Linq;
     using Bookstore.Data;
     using Bookstore.Entities;
-    using Bookstore.Entities.API.API.Controllers;
+    using Bookstore.Entities.API.Models;
     using Bookstore.Entities.Logger;
     using Bookstore.Entities.Quotes;
     using Bookstore.Repository.Interfaces;
@@ -90,7 +90,20 @@
 
         public IEnumerable<BooksApiDTO> GetAllBooksAPI()
         {
-            throw new NotImplementedException();
+            var bookList = new List<BooksApiDTO>();
+            var result = _context.Books.AsEnumerable();
+            foreach (var book in result)
+            {
+                var bookDTO = new BooksApiDTO()
+                {
+                    Title = book.Title,
+                    Author = book.AuthorName,
+                    Publisher = book.PublisherName
+
+                };
+                bookList.Add(bookDTO);
+            }
+            return bookList.AsEnumerable();
         }
 
         public IEnumerable<Book> GetAllBooksWithFullRelationalData()

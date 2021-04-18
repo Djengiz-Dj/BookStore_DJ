@@ -1,7 +1,7 @@
 ﻿namespace Bookstore.Repository.Interfaces
 {
     using Bookstore.Entities;
-    using Bookstore.Entities.API.API.Controllers;
+    using Bookstore.Entities.API.Models;
     using Bookstore.Entities.Quotes;
     using System.Collections.Generic;
 

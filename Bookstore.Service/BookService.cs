@@ -1,6 +1,7 @@
 ﻿namespace Bookstore.Service
 {
     using Bookstore.Entities;
+    using Bookstore.Entities.API.Models;
     using Bookstore.Entities.Quotes;
     using Bookstore.Repository.Interfaces;
     using Bookstore.Service.Interfaces;
@@ -52,6 +53,11 @@
         public IEnumerable<Book> GetAllBooksWithFullRelationalData()
         {
             var result = _bookRepository.GetAllBooksWithFullRelationalData();
+            return result;
+        }
+        public IEnumerable<BooksApiDTO> GetAllBooksAPI()
+        {
+            var result = _bookRepository.GetAllBooksAPI();
             return result;
         }
 
@@ -123,9 +129,11 @@
             return Tuple.Create(Categories, Authors, Publishers);
         }
 
-       
-
       
+
+
+
+
         #endregion
 
     }

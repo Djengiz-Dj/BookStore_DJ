@@ -24,7 +24,7 @@ namespace Bookstore
         public IConfiguration Configuration { get; }
        // private readonly IWebHostEnvironment _env;
 
-        public Startup(IConfiguration configuration, IWebHostEnvironment env)
+        public Startup(IConfiguration configuration /*, IWebHostEnvironment env*/)
         {
             Configuration = configuration;
             //_env = env;

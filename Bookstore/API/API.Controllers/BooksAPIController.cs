@@ -1,8 +1,9 @@
 ﻿using Bookstore.Entities;
-using Bookstore.Entities.API.API.Controllers;
+using Bookstore.Entities.API.Models;
 using Bookstore.Service.Interfaces;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Logging;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -15,11 +16,12 @@ namespace Bookstore.API.API.Controllers
     public class BooksAPIController : ControllerBase
     {
         private readonly IBookService _bookService;
-        //private Ilogger
+        private ILogger<BooksAPIController> _logger;
 
-        public BooksAPIController(IBookService bookService)
+        public BooksAPIController(IBookService bookService, ILogger<BooksAPIController> logger)
         {
             _bookService = bookService;
+            _logger = logger;
         }
 
         [HttpGet("BooksData")]
@@ -40,12 +42,13 @@ namespace Bookstore.API.API.Controllers
                 {
                     Title = book.Title,
                     Author = book.AuthorName,
-                    Publisher = book.PublisherName,
+                    Publisher = book.PublisherName
                 };
                 bookList.Add(bookDTO);
             }
             return bookList.AsEnumerable();
         }
+
         [HttpGet("BooksDataV2")]
         public IEnumerable<Book> GetBooksFullDataV2()
         {
@@ -74,17 +77,20 @@ namespace Bookstore.API.API.Controllers
             return CreatedAtAction("AddBook", new { id = book.Id, book });
         }
 
-        //[HttpGet("BookTest1")]
-        //public ActionResult<Book> BookTest(int id, string testString)
-        //{
-        //    if (testString == "CodeAcademy")
-        //    {
-        //        _logger.LogInformation("Bad Request from TestBook1 with params {0} and {1}", id, testString)
-        //    }
-        //else
-        //{
-        //}
-        //    return Ok();
-        //}
+        [HttpGet("BookTest1")]
+        public ActionResult<Book> BookTest(int id, string testString)
+        {
+            if (testString == "CodeAcademy")
+            {
+                _logger.LogInformation("Get request from bookTest with params id: {0} and string: {1} ", id, testString);
+
+            }
+            else
+            {
+                _logger.LogError("Bad request from bookTest with params id: {0} and string: {1} ", id, testString);
+                return BadRequest();
+            }
+            return Ok();
+        }
     }
 }
